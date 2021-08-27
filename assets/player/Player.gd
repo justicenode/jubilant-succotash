@@ -40,6 +40,48 @@ func _ready():
 	$Camera.fov = default_fov
 	if self.mouse_start_captured:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	
+	# Forward
+	var ev = InputEventKey.new()
+	ev.scancode = KEY_W
+	InputMap.add_action("player_forwards")
+	InputMap.action_add_event("player_forwards", ev)
+	
+	# Backward
+	ev = InputEventKey.new()
+	ev.scancode = KEY_S
+	InputMap.add_action("player_backwards")
+	InputMap.action_add_event("player_backwards", ev)
+	
+	# Left
+	ev = InputEventKey.new()
+	ev.scancode = KEY_A
+	InputMap.add_action("player_left")
+	InputMap.action_add_event("player_left", ev)
+	
+	# Right
+	ev = InputEventKey.new()
+	ev.scancode = KEY_D
+	InputMap.add_action("player_right")
+	InputMap.action_add_event("player_right", ev)
+	
+	# Sprint
+	ev = InputEventKey.new()
+	ev.scancode = KEY_SHIFT
+	InputMap.add_action("player_sprint")
+	InputMap.action_add_event("player_sprint", ev)
+	
+	# Jump
+	ev = InputEventKey.new()
+	ev.scancode = KEY_SPACE
+	InputMap.add_action("player_jump")
+	InputMap.action_add_event("player_jump", ev)
+	
+	# Ui Cancel
+	ev = InputEventKey.new()
+	ev.scancode = KEY_ESCAPE
+	InputMap.add_action("ui_cancel")
+	InputMap.action_add_event("ui_cancel", ev)
 	pass # Replace with function body.
 
 func handle_orientation(event : InputEventMouseMotion):
