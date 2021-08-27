@@ -78,10 +78,10 @@ func _ready():
 	InputMap.action_add_event("player_jump", ev)
 	
 	# Ui Cancel
-	ev = InputEventKey.new()
-	ev.scancode = KEY_ESCAPE
-	InputMap.add_action("ui_cancel")
-	InputMap.action_add_event("ui_cancel", ev)
+	#ev = InputEventKey.new()
+	#ev.scancode = KEY_ESCAPE
+	#InputMap.add_action("ui_cancel")
+	#InputMap.action_add_event("ui_cancel", ev)
 	pass # Replace with function body.
 
 func handle_orientation(event : InputEventMouseMotion):
